@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio player | FRESH</title>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" type="module"></script>
+</head>
+
+<body>
+  <main class="main">
+    <div class="container main-container">
+      <div class="audio-wrapper">
+        <!-- крутящийся кружок-->
+        <div class="audio-pulse">
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+        </div>
+        <div class="audio-cover">
+          <img class="audio-img" src="assets/img/Beyonce.jpg" alt="poster">
+        </div>
+        <!-- навигация аудио-->
+        <nav class="audio-navigation">
+          <div class="audio-info">
+            <span class="audio-text audio-icon">
+              <svg class="icon icon-music icon-music-1">
+                <use xlink:href="assets/svg/sprite.svg#icon-music"></use>
+              </svg>
+            </span>
+            <span class="audio-text audio-icon">
+              <svg class="icon icon-music icon-music-2">
+                <use xlink:href="assets/svg/sprite.svg#icon-music"></use>
+              </svg>
+            </span>
+            <span class="audio-text audio-singer">Beyonce</span>
+
+            <span class="audio-text audio-song">Don't Hurt Yourself</span>
+            <audio class="audio-player" src="assets/audio/Beyonce.mp3"></audio>
+          </div>
+          <div class="audio-btns">
+            <button class="audio-button audio-button__prev">
+              <svg class="icon icon-prev">
+                <use xlink:href="assets/svg/sprite.svg#icon-left"></use>
+              </svg>
+            </button>
+            <button class="audio-button audio-button__play">
+              <svg class="icon icon-play">
+                <use class="icon-play-svg" xlink:href="assets/svg/sprite.svg#icon-play"></use>
+              </svg>
+            </button>
+            <button class="audio-button audio-button__next">
+              <svg class="icon icon-next">
+                <use xlink:href="assets/svg/sprite.svg#icon-right"></use>
+              </svg>
+            </button>
+          </div>
+          <span class="audio-time audio-time__passed">00:00</span>
+          <div class="audio-progress">
+            <div class="audio-progress__timing"></div>
+          </div>
+          <span class="audio-time audio-time__total">00:00</span>
+        </nav>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="copyright">
+        <span class="copyright__item copyright__sign">©</span>
+        <span class="copyright__item copyright__year">2022</span>
+        <a class="copyright__item copyright__link" href="https://github.com/PesukarhuTG" target="_blank">pesukarhutg</a>
+      </div>
+      <a class="logo-link" href="https://rs.school/js-stage0/" target="_blank">
+        <svg class="icon icon-rss">
+          <use xlink:href="assets/svg/sprite.svg#icon-rss"></use>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

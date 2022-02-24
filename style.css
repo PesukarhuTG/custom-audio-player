@@ -1,0 +1,381 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat.woff2") format("woff2");
+}
+
+/* ======================================= COMMON ============================= */
+:root {
+  --background-color: #000;
+  --main-font-color: #fff;
+  --accent-color: rgb(193, 255, 6);
+  --gradient-color: #252525;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--main-font-color);
+
+  width: 100%;
+  background-color: var(--background-color);
+  background-image: url("./assets/img/bgrnd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.icon {
+  fill: var(--main-font-color);
+  transition: 0.3s;
+}
+
+.icon:hover {
+  fill: var(--accent-color);
+}
+
+/* ===================================== MAIN ============================== */
+.main {
+  height: calc(100vh - 74px);
+}
+
+.main-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===================== circle image ================== */
+
+.audio-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+}
+
+.audio-cover {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  margin-bottom: 70px;
+}
+
+/* =================== pulse element ======================*/
+.audio-pulse {
+  background-color: var(--accent-color);
+  width: 348px;
+  height: 348px;
+  border-radius: 100%;
+  position: absolute;
+  top: 91px;
+}
+
+.ring {
+  position: absolute;
+  background-color: inherit;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  opacity: 0;
+  animation: pulsing 2s ease-out infinite;
+  animation-play-state: paused;
+}
+
+.ring:nth-of-type(1) {
+  animation-delay: -0.5s;
+}
+
+.ring:nth-of-type(2) {
+  animation-delay: -1s;
+}
+.ring:nth-of-type(3) {
+  animation-delay: -1.5s;
+}
+/* =================== end pulse element ======================*/
+
+.audio-cover:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.audio-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: rotate 6s linear infinite;
+  animation-play-state: paused;
+  object-fit: cover;
+}
+
+/* ======================== navigation block ================== */
+.audio-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.audio-info,
+.audio-btns {
+  margin-bottom: 20px;
+}
+
+.audio-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-text {
+  display: inline-block;
+}
+
+.audio-singer {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.icon-music {
+  width: 15px;
+  height: 15px;
+  fill: var(--accent-color);
+}
+
+.icon-music-1 {
+  margin-bottom: 10px;
+}
+
+.audio-song {
+  max-width: 43%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.audio-progress {
+  width: 450px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: var(--main-font-color);
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+.audio-progress__timing {
+  background-color: var(--accent-color);
+  border-radius: 3px;
+  width: 0%;
+  height: 100%;
+  transition: width 0.1s linear;
+}
+
+.audio-time {
+  font-size: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.audio-time__passed {
+  align-self: flex-start;
+}
+
+.audio-time__total {
+  align-self: flex-end;
+  color: var(--accent-color);
+}
+
+/* ================= nav buttons ================= */
+.audio-btns {
+  display: flex;
+}
+
+.icon-prev,
+.icon-next {
+  width: 57px;
+  height: 47px;
+  padding: 0 10px;
+}
+
+.icon-play {
+  width: 50px;
+  height: 50px;
+}
+
+/* ================= animation rotate img ================= */
+
+.audio-wrapper.play .audio-img {
+  animation-play-state: running;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= animation pulse ================= */
+
+.audio-wrapper.play .ring {
+  opacity: 0.8;
+  animation-play-state: running;
+}
+
+@keyframes pulsing {
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* ===================================== FOOTER ============================== */
+.footer {
+  width: 100%;
+  height: 60px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.footer-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright__item {
+  padding-right: 15px;
+}
+
+.copyright__link {
+  text-decoration: none;
+  color: var(--main-font-color);
+}
+
+.copyright__link:hover {
+  color: var(--accent-color);
+}
+
+.icon-rss {
+  width: 115px;
+  height: 40px;
+}
+
+@media (max-width: 500px) {
+  .audio-navigation {
+    width: 100%;
+  }
+  .audio-progress {
+    width: 90%;
+    max-width: 450px;
+  }
+
+  .audio-cover {
+    width: 230px;
+    height: 230px;
+  }
+
+  .audio-pulse {
+    width: 100%;
+    max-width: 228px;
+    height: 100%;
+    max-height: 228px;
+    top: 7.6%;
+  }
+
+  .audio-info {
+    flex-wrap: wrap;
+  }
+
+  .audio-song {
+    max-width: initial;
+    width: 100%;
+    text-align: center;
+    overflow: initial;
+  }
+
+  .main {
+    height: calc(100vh - 110px);
+  }
+
+  .footer {
+    height: 100px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 350px) {
+  .audio-pulse {
+    display: none;
+  }
+
+  .audio-wrapper.play .ring {
+    opacity: 0;
+    animation-play-state: paused;
+  }
+}
