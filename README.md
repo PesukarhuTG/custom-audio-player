@@ -10,6 +10,6 @@ During the Code review process this solution got maximum points (70/70) and it w
 - HTML, CSS
 - JavaScript (implemented a custom audio player with changing posters)
 
-<h2 align="center"><a href="https://pesukarhutg.github.io/custom-audio-player/ target="_blank">Deploy link</a></h2>
+<h2 align="center"><a href="https://pesukarhutg.github.io/custom-audio-player/" target="_blank">Deploy link</a></h2>
 
 ![pr-audio-player](https://user-images.githubusercontent.com/39487464/152673195-2da942d6-d297-4b6e-a5c2-ed02445d10e8.JPG)
