@@ -13,9 +13,10 @@
 
 <body>
   <main class="main">
+    <video class="audio-background" src="/assets/fallback-black.mp4" loop muted></video>
     <div class="container main-container">
       <div class="audio-wrapper">
-        <!-- крутящийся кружок-->
+        <!-- spinned circle-->
         <div class="audio-pulse">
           <div class="ring"></div>
           <div class="ring"></div>
@@ -24,10 +25,9 @@
         </div>
 
         <div class="audio-cover">
-          <img class="audio-img" src="assets/img/Beyonce.jpg" alt="poster">
-
+          <img class="audio-img" src="assets/img/Jungkook.webp" alt="poster">
         </div>
-        <!-- навигация аудио-->
+
         <nav class="audio-navigation">
           <div class="audio-info">
             <span class="audio-text audio-icon">
@@ -40,11 +40,11 @@
                 <use xlink:href="assets/svg/sprite.svg#icon-music"></use>
               </svg>
             </span>
-            <span class="audio-text audio-singer">Beyonce</span>
-
-            <span class="audio-text audio-song">Don't Hurt Yourself</span>
-            <audio class="audio-player" src="assets/audio/Beyonce.mp3"></audio>
+            <span class="audio-text audio-singer">Jungkook</span>
+            <span class="audio-text audio-song">Seven</span>
+            <audio class="audio-player" src="assets/audio/Jungkook.mp3"></audio>
           </div>
+
           <div class="audio-btns">
             <button class="audio-button audio-button__prev">
               <svg class="icon icon-prev">
@@ -62,30 +62,28 @@
               </svg>
             </button>
           </div>
-          <span class="audio-time audio-time__passed">00:00</span>
-          <div class="audio-progress">
-            <div class="audio-progress__timing"></div>
+
+          <div class="progress-bar">
+            <span class="audio-time audio-time__passed">00:00</span>
+            <div class="audio-progress">
+              <div class="audio-progress__timing"></div>
+            </div>
+            <span class="audio-time audio-time__total">00:00</span>
           </div>
-          <span class="audio-time audio-time__total">00:00</span>
+
+          <div class="volume-bar">
+            <svg class="icon volume-down">
+              <use class="icon-sound-svg" xlink:href="assets/svg/sprite.svg#sound-on"></use>
+            </svg>
+            <input class="volume-progress" type="range" min="0" max="100" step="1" value="100">
+            <svg class="icon volume-up">
+              <use xlink:href="assets/svg/sprite.svg#sound-loud"></use>
+            </svg>
+          </div>
         </nav>
       </div>
     </div>
   </main>
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="copyright">
-        <span class="copyright__item copyright__sign">©</span>
-        <span class="copyright__item copyright__year">2022</span>
-        <a class="copyright__item copyright__link" href="https://github.com/PesukarhuTG" target="_blank">pesukarhutg</a>
-      </div>
-      <a class="logo-link" href="https://rs.school/js-stage0/" target="_blank">
-        <svg class="icon icon-rss">
-          <use xlink:href="assets/svg/sprite.svg#icon-rss"></use>
-        </svg>
-      </a>
-    </div>
-  </footer>
-
 </body>
 
 </html>
